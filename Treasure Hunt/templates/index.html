@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html>
+   <head>
+      <title>Treasure Hunt</title>
+      <link rel="icon" href="{{ url_for('static', filename='scull.ico') }}">
+      <style> 
+         body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+			background-image: url(/static/9.jpg);
+			background-size: cover;
+            background-color: #00003f;
+         }
+
+         h1 {
+            font-size: 70px;
+            color: #ffd700;
+            text-shadow: 2px 2px 60px #FFFAFA,
+            0 0 10px red,
+            0 0 20px black;
+            border: 10px solid #ffd700;
+            border-width: 10px 0 10px 0;
+            border-style: solid;
+            border-color: #ffd700 black #ffd700 black;
+            padding:15px;
+         }
+
+        h2 {
+			font-size: 20px;
+			color: lightgray; 
+			text-shadow: 2px 2px 40px #000,
+						0 0 10px black;
+			padding: 10px;
+			background-color: rgba(0, 0, 0, 0.5); 
+			backdrop-filter: blur(10px); 
+			position: relative;
+			margin-top: 45px;
+			margin-bottom: 0;
+		}
+
+         h3 {
+            font-size: 40px;
+            color: #ffd700;
+            text-shadow: 2px 2px 40px #FFFAFA,
+            0 0 10px black,
+            0 0 20px black;
+         }
+
+         h4 {
+            font-size: 60px;
+            color: #ffd700;
+            text-shadow: 2px 2px 40px #FFFAFA,
+            0 0 10px red,
+            0 0 20px black;
+         }
+
+         form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+         }
+
+         label {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-shadow: 2px 2px 60px #FFFAFA, 0 0 10px black;
+         }
+
+         input[type="text"] {
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 2px 2px 4px #000000;
+            width: 400px;
+            max-width: 100%;
+            margin-bottom: 20px;
+            text-align:center;
+            color: #ffd700;
+            background-color: black;
+         }
+
+         input[type="submit"] {
+            font-size: 24px;
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #ffd700;
+            color: #000000;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px #000000;
+            transition: all 0.2s ease-in-out;
+         }
+
+         input[type="submit"]:hover {
+            background-color: #ffcc00;
+            transform: scale(1.25);
+            box-shadow: 4px 4px 8px #000000;
+         }
+
+         input[type="submit"]:active {
+            transform: scale(0.9);
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Treasure Hunt</h1>
+      <div id="question">
+         {% if question %} 
+         <h2>{{ question|safe }}</h2>
+         {% endif %} 
+         <form action="" method="post"> 
+            <label for="answer-input" style="margin-top:40px">ARRRR!!! ANSWER YE!</label> 
+            <input type="text" id="answer-input" name="answer-input" style="margin-top:20px" autofocus> 
+            <input type="submit" value="Submit Yer Answer!" style="margin-top:80px"> 
+         </form>
+      </div>
+   </body>
+</html>

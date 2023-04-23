@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pirate Bounty Leatherboard</title>
+      <style>
+         body {
+         background-color: #0d2b58;
+         background-image: url(/static/6.jpg);
+         background-size: cover;
+         margin: 0;
+         padding: 0;
+         font-family: "Papyrus", "Comic Sans MS", cursive;
+         }
+         h1 {
+         text-align: center;
+         margin-top: 60px;
+         font-size: 3rem;
+         color: #f7dc6f;
+         text-shadow: 2px 2px 3px #2d2926;
+         }
+         table {
+         border-collapse: separate;
+         border-spacing: 0;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+         margin: 0 auto;
+         padding: 20px;
+         background-color: #a50202;
+         color: #ffffff;
+         border-radius: 15px;
+         overflow: hidden;
+         max-width: 800px;
+         }
+         th,
+         td {
+         padding: 15px;
+         text-align: center;
+         min-width: 150px;
+         }
+         th:nth-of-type(1),
+         td:nth-of-type(1) {
+         min-width: 250px;
+         font-size: 1.8rem;
+         text-shadow: 2px 2px 3px #2d2926;
+         color: #f7dc6f;
+         }
+         th {
+         background-color: #157f1f;
+         font-weight: bold;
+         font-size: 1.4rem;
+         color: #ffffff;
+         }
+         td {
+         font-size: 1.3rem;
+         color: #ffffff;
+         border-bottom: 1px solid #4A5568;
+         }
+         tr:nth-child(1) td:nth-child(1),
+         tr:nth-child(2) td:nth-child(1),
+         tr:nth-child(3) td:nth-child(1) {
+         font-weight: bold;
+         color: #f7dc6f;
+         }
+         tr:nth-child(1) td:nth-child(2) {
+         background-color: gold;
+         color: black;
+         font-size: 1.8rem;
+         font-weight: bold;
+         }
+         tr:nth-child(2) td:nth-child(2) {
+         background-color: silver;
+		 color: black;
+         font-size: 1.6rem;
+         font-weight: bold;
+         }
+         tr:nth-child(3) td:nth-child(2) {
+         background-color: #cd7f32;
+		 color: black;
+         font-size: 1.4rem;
+         font-weight: bold;
+         }
+         tr:nth-child(n+4):nth-child(-n+10) td:nth-child(2) {
+		 color: black;
+         background-color: #b87333;
+         }
+         tr:nth-child(n+11) td:nth-child(2) {
+		 color: black;
+         background-color: #434c52;
+         }
+         tr:hover {
+         background-color: #157f1f;
+         color: white;
+         transition: background-color 0.3s ease;
+         }
+         @media only screen and (max-width: 600px) {
+         table {
+         width: 100%;
+         }
+         td:nth-of-type(1):before {
+         content: "Username: ";
+         font-weight: bold;
+         }
+         td:nth-of-type(2):before {
+         content: "Best Time: ";
+         font-weight: bold;
+         }
+         td:nth-of-type(even) {
+         font-weight: bold;
+         background-color: #157f1f;
+         }
+         td:nth-of-type(odd) {
+         text-align: left;
+         color: #f7dc6f;
+         }
+         tr {
+         margin-bottom: 10px;
+         display: block;
+         border-bottom: 2px solid #4A5568;
+         }
+         tr:hover {
+         background-color: transparent;
+         color: #fff;
+         transition: background-color 0.3s ease;
+         }
+         tr:nth-of-type(even) {
+         background-color: #035d02;
+         }
+         }
+      </style>
+   </head>
+   <body>
+	  <a href="{{url_for('sign_in')}}" style="color:white; position:absolute; top:30px; left:30px; font-weight:bold; text-decoration:none;">&#8592; Back</a>
+      <h1>Pirate Bounty Leatherboard</h1>
+      <table>
+         <thead>
+            <tr>
+               <th>Pirate Name</th>
+               <th>Best Plunder Time</th>
+            </tr>
+         </thead>
+         <tbody>
+            {% for user in users|sort(attribute='bstime') %} 
+            <tr>
+               <td>{{ user.username }}</td>
+               <td>{{ "{:.3}".format(user.bstime) }} sec</td>
+            </tr>
+            {% endfor %} 
+         </tbody>
+      </table>
+   </body>
+</html>

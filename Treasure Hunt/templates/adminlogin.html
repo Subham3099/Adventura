@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login to Your Account</title>
+	<style>
+		body {
+			background-color: #1C2331;
+			margin: 0;
+			padding: 0;
+			font-family: 'IM Fell DW Pica SC', serif;
+			background-image:url(/static/10.jpg);
+			background-size: cover;
+			color: #f7dc6f;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		h1 {
+			font-size: 4rem;
+			margin-bottom: 2.5rem;
+			text-shadow: 2px 2px 3px #2d2926;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: #8B4513;
+			padding: 3rem;
+			border-radius: 15px;
+		}
+
+		label {
+			font-size: 1.8rem;
+			margin-bottom: 1rem;
+			display: block;
+		}
+
+		input[type="text"],
+		input[type="password"]{
+			font-size: 1.5rem;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 1rem;
+			width: 100%;
+			max-width: 500px;
+			background-color: #f7dc6f;
+			color: #1C2331;
+			box-shadow: 1px 1px 1px 1px #2d2926;
+		}
+
+		button[type="submit"] {
+			font-size: 2rem;
+			padding: 1rem 2rem;
+			background-color: #2d2926;
+			color: #f7dc6f;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			margin-top: 2rem;
+			transition: all 0.3s ease;
+			box-shadow: 2px 2px 3px #1C2331;
+		}
+
+		a {
+			font-size: 1.4rem;
+			margin-top: 2rem;
+			text-decoration: none;
+			color: #f7dc6f;
+			text-shadow: 1px 1px 1px #2d2926;
+			transition: all 0.3s ease;
+		}
+
+		a:hover,
+		button:hover {
+			background-color: #f7dc6f;
+			color: #1C2331;
+			transform: scale(1.1);
+			transition: all 0.3s ease;
+			box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+  </head>
+  <body>
+    <h1>Login - Come Aboard Captain</h1>
+    <form method="post" action="">
+      <label for="username">Captain's Name:</label>
+      <input type="text" id="username" name="username" required>
+	  
+	  
+      <label for="password">Secret Code:</label>
+      <input type="password" id="password" name="password" required>
+	  
+	  
+      <button type="submit">Set Sail</button>
+    </form>
+	<br>
+    <a href="{{ url_for('admin') }}">Become a Captain</a>
+    <br>
+    <a href="{{ url_for('view_admins') }}">View fellow Captains</a>
+	<br>
+    <a href="{{ url_for('sign_in') }}">Login to Yer Ship</a>
+    <br>
+    <a href="{{ url_for('sign_up') }}">Join Our Crew</a>
+  </body>
+</html>

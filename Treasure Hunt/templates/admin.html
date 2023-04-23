@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Pirata+One&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Login - Avast Ye!</title>
+	<style>
+		body {
+			background-color: #0e182a;
+			margin: 0;
+			padding: 0;
+			font-family: 'Pirata One', cursive;
+			background-image:url(/static/12.jpg);
+			background-size: cover;
+			color: #f2b705;  
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+
+		h1 {
+			font-size: 5rem;
+			margin-bottom: 2rem;
+			text-shadow: 2px 2px 5px #000;
+			color: #f2b705;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: #1b314d;
+			padding: 3rem;
+			border-radius: 10px;
+		}
+
+		label {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			display: block;
+		}
+
+		input[type="text"],
+		input[type="password"]{
+			font-size: 1.8rem;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 1.5rem;
+			background-color: #ffe29a;
+			color: #0e182a;
+			box-shadow: 2px 2px 3px #000;
+			max-width: 500px;
+			width: 100%;
+		}
+
+		button[type="submit"] {
+			font-size: 2.5rem;
+			padding: 1rem 2.5rem;
+			background-color: #f2b705;
+			color: #0e182a;
+			border-radius: 5px;
+			border: none;
+			cursor: pointer;
+			margin-top: 2rem;
+			box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease;
+		}
+
+		a {
+			font-size: 1.8rem;
+			margin-top: 2rem;
+			text-decoration: none;
+			color: #f2b705;
+			text-shadow: 1px 1px 2px #000;
+			transition: all 0.3s ease;
+		}
+
+		a:hover,
+		button:hover {
+			background-color: #ffe29a;
+			color: #0e182a;
+			transform: scale(1.1);
+			transition: all 0.3s ease;
+			box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+		}
+	</style>
+  </head>
+  <body>
+    <h1>Admin Signup - Avast Ye!</h1>
+    <form method="post" action="{{ url_for('admin') }}">
+	  <label for="key">Secret Code:</label>
+      <input type="text" id="key" name="key" required>
+      <br>
+	
+      <label for="username">Pirate Name:</label>
+      <input type="text" id="username" name="username" required>
+      <br>
+	  
+      <label for="password">Ship Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+
+	  <label for="password">Confirm Ship Password:</label>
+      <input type="password" id="password" name="confirm_password" required>
+      <br>
+	  
+      <button type="submit">Hoist the Colors!</button>
+    </form>
+	<br>
+    <a href="{{ url_for('admin_login') }}">Login to Administrator Account</a>
+    <br>
+    <a href="{{ url_for('sign_in') }}">Login to Yer Ship</a>
+    <br>
+    <a href="{{ url_for('sign_up') }}">Join Our Crew</a>
+  </body>
+</html>
