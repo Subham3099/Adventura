@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Data</title>
+     <link rel="icon" href="{{ url_for('static', filename='scull.ico') }}">
+	<style>
+		body{
+			background-color: #102e4a;
+			color: #fff;
+			font-size: 1.2em;
+			background-image:url(/static/13.jpg);
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+		}
+		h1{
+			font-size: 2.5em;
+			text-align: center;
+			border-bottom: 2px solid #fff;
+			margin: 2em 0 1em 0;
+			padding-bottom: 0.5em;
+		}
+		.back-button {
+		  display: block;
+		  position: fixed;
+		  top: 20px;
+		  left: 20px;
+		  padding: 10px;
+		  background-color: #fff;
+		  color: #102e4a;
+		  font-weight: bold;
+		  text-decoration: none;
+		  border-radius: 5px;
+		  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+		.back-button:hover {
+		  transform: scale(1.1);
+		  transition: transform 0.2s ease-in-out;
+		}
+		table{
+			margin: 0 auto;
+			border-collapse: collapse;
+			text-align: center;
+			font-size: 1.2em;
+			border: 2px solid #fff;
+			width: 80%;
+		}
+		th, td{
+			padding: 0.5em;
+			border-collapse: collapse;
+			border: 1px solid #fff;
+		}
+		th{
+			background-color: #fff;
+			color: #102e4a;
+			font-weight: normal;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+		tr:nth-child(even){
+			background-color: #294c69;
+		}
+		tr:hover{
+			background-color: #447dab;
+		}
+	</style>
+</head>
+<body>
+	<a href="{{url_for('admin_login')}}" class="back-button">&#x2190; Back</a>
+	<h1>Pirate Captain Data</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Captains</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for admin in admins %}
+			<tr>
+				<td>{{ admin.adminname }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html> 
