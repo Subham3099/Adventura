@@ -49,5 +49,5 @@ pip install Flask
 ->User Leaderboard : it only shows the overall score of the top users.
 ->Admin login with secret key : There is also an option to add Admins with the help of the secret key - "as" .
 ->View all Admins : there is also an option to view the usernames of all admins of the game.
-->To reset all databases goto : "http://zeon3099.pythonanywhere.com/reset"
+->To reset all databases goto : "zeon3099.pythonanywhere.com/ reset"
 
