@@ -3,7 +3,7 @@
 
 # Play this puzzle at - http://zeon3099.pythonanywhere.com/signin
 
-# This puzzle accesses the following things:
+# This puzzle assesses the following things:
 
 ->Analytical thinking: The puzzle requires the user to analyze the clues and piece them together to form a solution. 
 The ability to analyze information thoroughly and logically is a crucial aspect of analytical thinking and can be 
