@@ -3,7 +3,7 @@
 
 # Play this puzzle at - http://zeon3099.pythonanywhere.com/signin
 
-#This puzzle accesses the following things:
+# This puzzle accesses the following things:
 
 ->Analytical thinking: The puzzle requires the user to analyze the clues and piece them together to form a solution. 
 The ability to analyze information thoroughly and logically is a crucial aspect of analytical thinking and can be 
@@ -28,13 +28,13 @@ A user's ability to prioritize tasks, focus on important elements of the puzzle,
 can exhibit their time management skills.
 
 
-#Possible Ways to Solve The Puzzle :
+# Possible Ways to Solve The Puzzle :
 -> There is only one possible way to solve it that is : west,west,north,north,east,west
 
-#Deadends:
+# Deadends:
 -> All other options except correct answers are deadends and are given a penalty of 5 seconds for each wrong answer or refresh during the assessment.
 
-#Steps to set up the Project
+# Steps to set up the Project
 ->python should be updated and following should be there in system if not install them using :
 pip install Flask-SQLAlchemy
 pip install hashlib
@@ -44,7 +44,7 @@ pip install Flask
 ->There it will show a link goto that link for local hosting of this application.
 ->For additional requirements for runtime environment it is given in requirements.txt
 
-#Implemented and Extra Features :
+# Implemented and Extra Features :
 
 ->On refreshing, from either browser or website, the puzzle  starts from the same step or give the user an option to restart.
 ->A dashboard for the admin where the progress of all the users can be tracked & analyzed is there. There is time recorded for each question answered by the user 
